@@ -45,6 +45,9 @@ AmpaMartinet::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
+  # https://devcenter.heroku.com/articles/rails-asset-pipeline
+  config.assets.initialize_on_precompile = false
+
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 

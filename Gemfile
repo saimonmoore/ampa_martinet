@@ -7,6 +7,16 @@ gem 'rails', '3.2.15'
 
 gem 'pg'
 
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+gem "alchemy_cms", "~> 2.7.1"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,22 +30,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
 
+  # Deploy with Capistrano (Non heroku environments)
+  gem "capistrano"
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+  gem 'byebug'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :production do
+  gem "rails_12factor"
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-gem "alchemy_cms", "~> 2.7.1"
-gem "capistrano", :group => "development"
+ruby '2.0.0'
